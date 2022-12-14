@@ -95,6 +95,9 @@ export class EventsService {
     return await this.eventRepository.find({
       relations: {
         workshops: true
+      },order:{
+        name:"ASC",
+        workshops :{start:"ASC"}
       }
     });
   }
